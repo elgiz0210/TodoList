@@ -1,0 +1,7 @@
+.todoList-item{
+    font-size: 25px;
+}
+
+.todoList-complated{
+    text-decoration: line-through;
+}
