@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { completeTodo } from "../../featuers/todo/todoSlice";
+import { completeTodo, removeTodo } from "../../feathers/todo/todoSlice";
 import ".//list.css";
 
 const TodoItem = () => {
@@ -9,25 +9,40 @@ const TodoItem = () => {
 
   const completeTodoHandler = (id) => {
     dispath(completeTodo(id));
+    setIsCompleted(!isCompleted);
   };
+  const deleteTodoHandler = (id) => {
+    dispath(removeTodo(id));
+  };
+  const [isCompleted, setIsCompleted] = useState(false);
 
   return (
     <div>
       {todos.map((item, idx) => {
         return (
           <div key={idx}>
-            <span
-              className={`todoList-item ${
-                item.completed ? `todoList-complated` : ``
-              }`}
-            >
-              {item.text}
-            </span>
-            <input
-              type="button"
-              value="выполнено"
-              onClick={() => completeTodoHandler(item.id)}
-            />
+            <ul className="todo">
+              <span>
+                <p
+                  className={
+                    item.completed ? "todoList-completed" : "todoList-item"
+                  }
+                >
+                  {item.text}
+                </p>
+                <input
+                  type="button"
+                  value={`${item.completed ? `cancel` : "done"}`}
+                  onClick={() => completeTodoHandler(item.id)}
+                />
+                <input
+                  className="delete"
+                  type="button"
+                  value="delete"
+                  onClick={() => deleteTodoHandler(item.id)}
+                />{" "}
+              </span>
+            </ul>
           </div>
         );
       })}

@@ -2,5 +2,14 @@
   text-align: center;
 }
 
+.container {
+  max-width: 800px;
+  margin: 100px auto 0 auto;
+}
 
+.title {
+  text-align: center;
+  color: #1bc4b5;
+  margin-bottom: 10px;
+}
 

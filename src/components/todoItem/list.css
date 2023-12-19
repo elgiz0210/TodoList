@@ -1,7 +1,21 @@
 .todoList-item{
-    font-size: 25px;
+    font-size: 20px;
+    padding: 10px;
+
 }
 
-.todoList-complated{
+.todoList-completed{
     text-decoration: line-through;
+}
+
+.form {
+    width: 100%;
+    outline: none;
+    border: 2px solid #1bc4b5;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.completed {
+    text-decoration: none;
 }

@@ -1,19 +1,20 @@
-import React from "react"; 
+import React, { useState }  from "react"; 
 import { useDispatch } from "react-redux";
 import { v4 } from "uuid";
 import { addTodo } from "../../feathers/todo/todoSlice";
 import TodoItem from "../todoItem/todoItem";
+import  './/todoList.css' 
 
 const TodoList = () => { 
 
-    const [todoValue,setTodoValue] = React.useState('')
+    const [todoValue,setTodoValue] = useState('')
     const dispath = useDispatch()
 
     const addTodoHandler = () => {
         const todo = {
             id:v4(),
             text:todoValue,
-            complated: false
+            complatede: false
         }
         dispath(addTodo(todo))
         setTodoValue('')
@@ -23,9 +24,10 @@ const TodoList = () => {
 
 
     return( 
-        <div> 
-            <h2>Список покупок</h2> 
-            <form> 
+    <div className="wrapper"> 
+        <div className="container"> 
+            <h2 className="title">Список покупок</h2> 
+            <form className="form"> 
                 <input
                 type="text"
                 placeholder="Название продукта"
@@ -40,8 +42,10 @@ const TodoList = () => {
                 /> 
             </form> 
             <TodoItem></TodoItem>
-        </div> 
+        </div>
+    </div>    
+    
     ) 
 } 
- 
+
 export default TodoList;
