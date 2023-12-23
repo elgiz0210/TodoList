@@ -16,6 +16,28 @@
     font-size: 20px;
     border-radius: 5px;
 }
-.completed {
-    text-decoration: none;
+.delete {
+    background: red;
+    border-radius: 5px;
+    border: 2px solid red;
+    margin: 5px 5px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.done {
+    background: green;
+    border-radius: 5px;
+    border: 2px solid green;
+    margin: 5px 5px;
+    color: #FFF;
+    cursor: pointer;
+}
+.cancel {
+    background: white;
+    color: grey;
+    border: 2px solid white;
+    margin: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }

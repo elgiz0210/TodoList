@@ -8,36 +8,49 @@ import  './/todoList.css'
 const TodoList = () => { 
 
     const [todoValue,setTodoValue] = useState('')
-    const dispath = useDispatch()
+    const dispatch = useDispatch()
 
     const addTodoHandler = () => {
         const todo = {
             id:v4(),
             text:todoValue,
-            complatede: false
+            completed: false
         }
-        dispath(addTodo(todo))
+        dispatch(addTodo(todo))
         setTodoValue('')
+    
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     dispatch(addTodo(todoValue))
+    // }
 
 
+
+    // const handleKeyPress = (e) =>{
+    //     if(e.key === 'Enter'){
+    //         handleSubmit(e)
+    //     }
     }
 
 
     return( 
     <div className="wrapper"> 
         <div className="container"> 
-            <h2 className="title">Список покупок</h2> 
+            <h2 className="title">Todo List</h2> 
             <form className="form"> 
                 <input
+                className="entry-field"
                 type="text"
                 placeholder="Название продукта"
+                // onKeyDown={handleKeyPress}
                 value={todoValue}
                 onChange={(event) => setTodoValue(event.target.value)}
                 /> 
 
                 <input 
+                className="btn-add"
                 type="button" 
-                value="Добавить" 
+                value="add" 
                 onClick={() => addTodoHandler()}
                 /> 
             </form> 

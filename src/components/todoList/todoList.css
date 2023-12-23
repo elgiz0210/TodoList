@@ -11,5 +11,16 @@
     padding: 10px;
     font-size: 20px;
     margin-bottom: 10px;
-    cursor: pointer;
+
+}
+.entry-field {
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin: 5px 5px 5px 5px;
+  color: black;
+}
+.btn-add {
+  border-radius: 5px;
+  border: #fff;
+  cursor: pointer;
 }

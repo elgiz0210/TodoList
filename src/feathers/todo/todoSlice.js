@@ -14,16 +14,11 @@ export const todoSlice = createSlice({
         },
         completeTodo: (state, action) => {
             const findTodo = state.todos.find((item) => item.id === action.payload)
-            findTodo.completed = !findTodo.complete
+            findTodo.completed = !findTodo.completed
         },
         removeTodo:(state,action) => {
             state.todos = state.todos.filter(item => item.id !==  action.payload)
         },
-        // cancelTodo:(state,action) => {
-        //     state.todos = !state.todos.push(() => !state.isCompleted !== action.payload)
-        // },
-        
-        
     }
 })
 
